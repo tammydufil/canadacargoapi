@@ -17,6 +17,7 @@ const salesRoute = require("./routes/salesRoutes/salesRoute");
 const taxroute = require("./routes/taxAndDiscountRoute/taxRoute");
 const reportDashboardROute = require("./routes/Reportroute/dashboardRoute");
 const configurationRoute = require("./routes/configurationRoutes/configurationRoute");
+const shipmentRoute = require("./routes/shipmentRoute/shipmentRoute");
 
 app.use("/canadacargoapi/api/", authenticationRoute);
 app.use("/canadacargoapi/api/", productRoute);
@@ -24,6 +25,7 @@ app.use("/canadacargoapi/api/", salesRoute);
 app.use("/canadacargoapi/api/", taxroute);
 app.use("/canadacargoapi/api/", reportDashboardROute);
 app.use("/canadacargoapi/api/", configurationRoute);
+app.use("/canadacargoapi/api/", shipmentRoute);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
