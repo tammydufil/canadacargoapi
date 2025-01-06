@@ -12,6 +12,20 @@ const {
   getShipmentInfoByTransId,
   updateShipment,
   getBarcodeShipmentItems,
+  updateItemStatusToOutOfOffice,
+
+  getOutOfOffice,
+  updateItemTrackingAndStatus,
+  updateMultipleItemsTrackingAndStatus,
+  getItemsInTransit,
+  updateItemStatusToArrived,
+  getItemsArrived,
+  updateItemStatusToDelivered,
+  sendArrivalNotification,
+  getDashboardData,
+  getMonthlyRevenue,
+  getShipmentTypeCounts,
+  getMonthlyShipments,
 } = require("../../controllers/shipmentControllers/generalShipment");
 const { authenticateUser } = require("../../middlewares/authMiddleware");
 
@@ -43,5 +57,42 @@ router.post(
   getShipmentInfoByTransId
 );
 router.post("/updateShipment", authenticateUser, updateShipment);
+router.post(
+  "/updateItemStatusToOutOfOffice",
+  authenticateUser,
+  updateItemStatusToOutOfOffice
+);
+router.post(
+  "/updateItemTrackingAndStatus",
+  authenticateUser,
+  updateItemTrackingAndStatus
+);
+router.post(
+  "/updateMultipleItemsTrackingAndStatus",
+  authenticateUser,
+  updateMultipleItemsTrackingAndStatus
+);
+router.post(
+  "/updateItemStatusToArrived",
+  authenticateUser,
+  updateItemStatusToArrived
+);
+router.post(
+  "/updateItemStatusToDelivered",
+  authenticateUser,
+  updateItemStatusToDelivered
+);
+router.post(
+  "/sendArrivalNotification",
+  authenticateUser,
+  sendArrivalNotification
+);
+router.get("/getOutOfOffice", authenticateUser, getOutOfOffice);
+router.get("/getItemsInTransit", authenticateUser, getItemsInTransit);
+router.get("/getItemsArrived", authenticateUser, getItemsArrived);
+router.get("/getDashboardData", authenticateUser, getDashboardData);
+router.post("/getMonthlyRevenue", authenticateUser, getMonthlyRevenue);
+router.post("/getShipmentTypeCounts", authenticateUser, getShipmentTypeCounts);
+router.post("/getMonthlyShipments", authenticateUser, getMonthlyShipments);
 
 module.exports = router;

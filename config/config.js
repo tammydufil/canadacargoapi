@@ -14,7 +14,7 @@ module.exports = {
   //   },
   //   port: 3306,
   // },
-  
+
   development: {
     username: process.env.MYSQL_ADDON_USER,
     password: process.env.MYSQL_ADDON_PASSWORD,
